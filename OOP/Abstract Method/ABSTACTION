@@ -1,0 +1,41 @@
+# Abstract class : 1)A class that cannot be instantiated and is meant to be subclassed.
+#                 2) It can contain abstract methods (methods without implementation) that must be implemented by subclass.
+#                 3) It can also contain concrete methods with implementation.
+#                4) It is blueprint for other classes and helps to achieve abstraction and polymorphism in OOP.
+                # 5) It is defined using the 'abc' module in Python and the 'ABC' class as a base class.
+#                6) It is used to define a common interface for a group of related classes.
+# 
+# Abstract method : 1) A method that is declared in an abstract class but does not have an implementation.
+#                   2) It is meant to be overridden by subclasses that inherit from the abstract class.
+#                  3) It is defined using the @abstractmethod decorator from the 'abc' module in Python.
+
+from abc import ABC, abstractmethod
+class Parent(ABC):
+    @abstractmethod
+    def show(self):
+        pass
+
+class Child(Parent):
+    def show(self):
+
+        print("This is the implementation of the abstract method in the Child class.")
+c=Child()
+c.show()
+
+# Example of an abstract class with a concrete method
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    def display(self):
+        print("This is a shape.")
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+c = Circle(5)
+print("Area of the circle:", c.area())
+c.display()
