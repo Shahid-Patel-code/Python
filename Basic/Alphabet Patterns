@@ -1,0 +1,87 @@
+# Alphabet Patterns
+# A A A
+# B B B
+# C C C
+n = 3
+# 1st way
+for i in range(n):
+    print((chr(65 + i) + " ") * n)
+# 2nd way
+for i in range(n):
+    for j in range(n):
+        print(chr(65 + i), end=" ")
+    print()
+
+# A B C
+# A B C
+# A B C
+n = 3
+# 1st way
+for i in range(n):
+    ch = 65
+    for j in range(n):
+        print(chr(ch), end=" ")
+        ch += 1
+    print()
+# 2nd way
+i=1
+ch= 65
+n=3
+while i<=n:
+    print((chr(ch) + " ") * n)
+    ch += 1
+    i += 1
+
+# A
+# B B
+# C C C
+n = 3
+ch= 65
+# 1st way
+for i in range(n):
+    for j in range(i+1):
+        print(chr(ch), end=" ")
+    ch += 1
+    print()
+
+# 2nd way
+for i in range(1,n+1):
+    print((chr(65 + i-1) + " ") * i)
+
+# A
+# A B
+# A B C
+n = 3
+
+for i in range(1, n+1):
+    ch= 65
+    for j in range(1, i+1):
+        print(chr(ch), end=" ")
+        ch += 1
+    print()
+
+# A
+# B C
+# D E F
+n = 3
+ch = 65
+for i in range(1, n+1):
+    for j in range(i):
+        print(chr(ch), end=" ")
+        ch += 1
+    print()
+
+# A
+# b C
+# d E f
+# G h I j
+n = 4
+ch = 65
+for i in range(1, n+1):
+    for j in range(i):
+        if ch % 2 == 0:
+            print(chr(ch).lower(), end=" ")
+        else:
+            print(chr(ch), end=" ")
+        ch += 1
+    print()
